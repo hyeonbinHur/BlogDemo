@@ -2,6 +2,7 @@ const express = require("express"); // import and assign express framework
 const app = express();
 const port = 3000;
 
+// routing
 app.get("/", (req, res) => {
   res.send("Hello world");
 });
