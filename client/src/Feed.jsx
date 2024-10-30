@@ -1,5 +1,5 @@
 const Feed = () => {
-  return <>피드 페이지</>;
+  return <div>피드 페이지</div>;
 };
 
 export default Feed;
