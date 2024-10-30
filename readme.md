@@ -5,3 +5,5 @@ npm install iconv-lite@latest
 npm init jest@latest
 
 frontEnd
+
+jenkins test
