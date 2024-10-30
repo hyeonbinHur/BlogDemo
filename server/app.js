@@ -1,13 +1,6 @@
 const express = require("express"); // import and assign express framework
-const mysql = require("mysql2");
+
 const apis = require("./handler/api.js");
-const db_info = {
-  host: "database-1.c9mcyqkkco2j.us-east-1.rds.amazonaws.com",
-  port: "3306",
-  user: "admin",
-  password: "blogpasswordjhhshb",
-  database: "blogdemo", // database 이름을 문자열로 입력
-};
 
 const app = express();
 const port = 3000;
