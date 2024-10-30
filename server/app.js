@@ -1,5 +1,5 @@
 const express = require("express"); // import and assign express framework
-
+const cors = require("cors");
 const apis = require("./handler/api.js");
 
 const app = express();
@@ -10,6 +10,7 @@ const router = express.Router();
 app.get("/", (req, res) => {
   res.send("Hello world");
 });
+app.use(cors());
 // /test/api 경로로 요청 시 라우터 사용
 app.use("/test/api", router);
 
