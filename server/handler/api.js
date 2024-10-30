@@ -1,5 +1,5 @@
 const mysql = require("mysql2");
-
+require("dotenv").config();
 const db_info = {
   host: process.env.DB_HOST,
   port: process.env.DB_PORT,
@@ -10,7 +10,6 @@ const db_info = {
 };
 
 const connection = mysql.createConnection(db_info);
-
 const testApi = (req, res) => {
   connection.query("SELECT * FROM test", (err, results) => {
     if (err) {

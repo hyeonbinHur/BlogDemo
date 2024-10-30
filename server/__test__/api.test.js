@@ -1,8 +1,10 @@
 const apis = require("../handler/api.js");
 const iconv = require("iconv-lite");
+
 iconv.encodingExists("cesu8"); // 이 라인은 iconv-lite에서 cesu8을 인식하도록 합니다.
 
 const mockRequest = {};
+
 const mockResponse = {
   status: jest.fn(() => mockResponse),
   send: jest.fn(),
@@ -19,7 +21,6 @@ describe("first test", () => {
         body: "first test body",
       },
     ];
-
     // mockResponse.json이 호출될 때 전달된 값을 확인합니다.
     mockResponse.json.mockImplementation((data) => {
       try {
@@ -29,7 +30,6 @@ describe("first test", () => {
         done(error); // 테스트 실패 시 에러 전달
       }
     });
-
     // testApi 함수 호출
     apis.testApi(mockRequest, mockResponse);
   });

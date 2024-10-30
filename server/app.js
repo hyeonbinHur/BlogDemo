@@ -9,8 +9,6 @@ const db_info = {
   database: "blogdemo", // database 이름을 문자열로 입력
 };
 
-const connection = mysql.createConnection(db_info);
-
 const app = express();
 const port = 3000;
 const router = express.Router();
@@ -19,11 +17,9 @@ const router = express.Router();
 app.get("/", (req, res) => {
   res.send("Hello world");
 });
-
 // /test/api 경로로 요청 시 라우터 사용
 app.use("/test/api", router);
 
-// Read all records from the 'test' table
 router.get("/tests", apis.testApi);
 
 app.listen(port, () => {
