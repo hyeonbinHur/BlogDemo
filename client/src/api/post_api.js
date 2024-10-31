@@ -5,7 +5,6 @@ const base = 'http://localhost:3000/test/api/post';
 const createPost = async (newPost) => {
   try {
     const response = await axios.post(base, newPost);
-
     return response.data;
   } catch (err) {
     console.error('Error creating post:', err);
