@@ -1,7 +1,7 @@
 const connection = require("./dp_info");
 
 const get_posts = (req, res) => {
-  connection.query("SELECT title FROM post", (err, results) => {
+  connection.query("SELECT title, post_uuid FROM post", (err, results) => {
     if (err) {
       res.status(500).send("Fail data");
     } else {
