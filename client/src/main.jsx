@@ -1,14 +1,16 @@
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
+import React from 'react';
+import ReactDOM from 'react-dom'; // client 제거
 import App from './App.jsx';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'; // 최신 버전인 경우 @tanstack/react-query 사용
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 const queryClient = new QueryClient();
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
+// React 17 방식으로 렌더링
+ReactDOM.render(
+  <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <App />
     </QueryClientProvider>
-  </StrictMode>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
