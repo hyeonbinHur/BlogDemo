@@ -1,57 +1,76 @@
-import React, { useRef, useEffect, useState } from 'react';
+// import React, { useRef, useEffect, useState, useMemo } from 'react';
+// import ReactQuill from 'react-quill';
+// import 'react-quill/dist/quill.snow.css';
 
-import Quill from 'quill';
-import 'quill/dist/quill.snow.css'; // Quill 기본 스타일
+// export default function QuillTest() {
+//   const quillRef = useRef(null);
+//   const [data, setData] = useState('');
 
-import hljs from 'highlight.js'; // 코드 하이라이팅 라이브러리
-import 'highlight.js/styles/atom-one-dark.css'; // 스타일
-window.hljs = hljs;
+//   useEffect(() => {
+//     const targetNode = document.getElementById('editor-container');
+//     if (targetNode) {
+//       const observer = new MutationObserver(() => {
+//         // DOM 변화가 발생할 때 실행할 코드
+//       });
+//       observer.observe(targetNode, { childList: true, subtree: true });
 
-import ImageResize from 'quill-image-resize-module-react'; // 이미지 리사이징 모듈
-import Viewer from './Viewer';
+//       return () => {
+//         observer.disconnect();
+//       };
+//     }
+//   }, []);
 
-// Quill 모듈 등록
-Quill.register('modules/imageResize', ImageResize);
+//   const formats = [
+//     'font',
+//     'header',
+//     'bold',
+//     'italic',
+//     'underline',
+//     'strike',
+//     'blockquote',
+//     'list',
+//     'bullet',
+//     'indent',
+//     'link',
+//     'align',
+//     'color',
+//     'background',
+//     'size',
+//     'code-block',
+//   ];
 
-export default function QuillTest() {
-  const quillRef = useRef(null);
-  const [data, setData] = useState('');
-  useEffect(() => {
-    if (!quillRef.current) {
-      quillRef.current = new Quill('#editor-container', {
-        theme: 'snow',
-        modules: {
-          syntax: true,
-          imageResize: { modules: ['Resize'] }, // 이미지 리사이징 모듈 활성화
-          toolbar: [
-            [{ header: [1, 2, false] }],
-            ['bold', 'italic', 'underline'],
-            ['code-block'], // 코드 블록 버튼 추가
-            [{ list: 'ordered' }, { list: 'bullet' }],
-            ['link', 'image'], // 이미지 삽입 버튼 추가
-          ],
-        },
-      });
-    }
-  }, []);
+//   const modules = useMemo(() => {
+//     return {
+//       syntax: true,
+//       toolbar: [
+//         [{ header: [1, 2, false] }],
+//         ['bold', 'italic', 'underline'],
+//         ['code-block'],
+//         [{ list: 'ordered' }, { list: 'bullet' }],
+//         ['link', 'image'],
+//       ],
+//     };
+//   }, []);
 
-  const handleContents = () => {
-    if (quillRef.current) {
-      const content = quillRef.current.root.innerHTML;
-      console.log(`${content}`);
-      setData(content);
-    }
-  };
+//   const handleContents = () => {
+//     if (quillRef.current) {
+//       const content = quillRef.current.getEditor().root.innerHTML;
+//       console.log(content);
+//       setData(content);
+//     }
+//   };
 
-  return (
-    <div>
-      <div id='editor-container' style={{ height: '400px' }}></div>
-      <button onClick={handleContents} style={{ marginTop: '10px' }}>
-        Console contents
-      </button>
-      <div>
-        <Viewer data={data} />
-      </div>
-    </div>
-  );
-}
+//   return (
+//     <div>
+//       <ReactQuill
+//         ref={quillRef}
+//         modules={modules}
+//         formats={formats}
+//         style={{ height: '400px' }}
+//       />
+//       <button onClick={handleContents} style={{ marginTop: '10px' }}>
+//         Console contents
+//       </button>
+//     </div>
+//   );
+// }

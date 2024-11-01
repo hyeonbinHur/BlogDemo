@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import { useForm } from 'react-hook-form';
 import Form from 'react-bootstrap/Form';
 import Stack from 'react-bootstrap/Stack';
+// import QuillTest from '../components/texteditor/QuillTest';
 
 export default function CreatePost() {
   const queryClient = useQueryClient();
@@ -40,8 +41,8 @@ export default function CreatePost() {
 
   /**
    * Testing purpost
-   *
    */
+
   const { data: posts, refetch } = useQuery({
     queryKey: ['getPosts'],
     queryFn: () => api.readPosts(),
@@ -62,12 +63,12 @@ export default function CreatePost() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        flexDirection: 'column',
+        gap: '5rem',
       }}
     >
       <div
         style={{
-          width: '70vw',
+          width: '40%',
           height: '100vh',
         }}
       >
@@ -95,6 +96,9 @@ export default function CreatePost() {
                 style={{ border: '1px solid black' }}
                 {...register('body')} // 폼 데이터 등록
               />
+
+              {/* <QuillTest /> */}
+
               <Button
                 type='submit'
                 style={{ marginTop: '2rem', float: 'right' }}
@@ -106,6 +110,17 @@ export default function CreatePost() {
           </Form>
         </Stack>
         <div>{/* <QuillTest /> */}</div>
+      </div>
+      <div
+        style={{
+          padding: '1rem',
+          borderRadius: '1rem',
+          width: '40%',
+          height: '100vh',
+          border: '1px solid black',
+        }}
+      >
+        Hello world
       </div>
     </div>
   );
