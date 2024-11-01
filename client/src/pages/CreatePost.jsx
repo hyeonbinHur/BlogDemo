@@ -1,36 +1,11 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import * as api from '../api/post_api';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import { useForm } from 'react-hook-form';
 import Form from 'react-bootstrap/Form';
 import Stack from 'react-bootstrap/Stack';
-
-///TUI test -> not support image resizing functionalities, might be unable to customize codeblocks with specific language.
-
-// import '@toast-ui/editor/dist/toastui-editor.css';
-// import { Editor } from '@toast-ui/react-editor';
-// // import codeSyntaxHighlight from '@toast-ui/editor-plugin-code-syntax-highlight/dist/toastui-editor-plugin-code-syntax-highlight-all.js';
-// // import 'prismjs/themes/prism-vsc-dark-plus.css';
-// import codeSyntaxHighlight from '@toast-ui/editor-plugin-code-syntax-highlight/dist/toastui-editor-plugin-code-syntax-highlight-all.js';
-// import 'prismjs/themes/prism.css'; // 다크 테마
-// import Prism from 'prismjs';
-// import colorSyntax from '@toast-ui/editor-plugin-color-syntax';
-// 또는 다른 테마
-
-//CKEditor
-
-import { CKEditor } from '@ckeditor/ckeditor5-react';
-import {
-  ClassicEditor,
-  Bold,
-  Essentials,
-  Italic,
-  Mention,
-  Paragraph,
-  Undo,
-} from 'ckeditor5';
-import 'ckeditor5/ckeditor5.css';
+import QuillTest from '../components/texteditor/QuillTest';
 
 export default function CreatePost() {
   const queryClient = useQueryClient();
@@ -131,31 +106,8 @@ export default function CreatePost() {
             </Form.Group>
           </Form>
         </Stack>
+        <div>{/* <QuillTest /> */}</div>
       </div>
-      <div>Text Editor Test</div>
-      {/* <Editor
-        initialValue='hello react editor world!'
-        previewStyle='vertical'
-        height='600px'
-        initialEditType='markdown'
-        useCommandShortcut={true}
-        plugins={[colorSyntax, [codeSyntaxHighlight, { highlighter: Prism }]]}
-      /> */}
-
-      <CKEditor
-        editor={ClassicEditor}
-        config={{
-          toolbar: {
-            items: ['undo', 'redo', '|', 'bold', 'italic'],
-          },
-          plugins: [Bold, Essentials, Italic, Mention, Paragraph, Undo],
-          licenseKey: '<YOUR_LICENSE_KEY>',
-          mention: {
-            // Mention configuration
-          },
-          initialData: '<p>Hello from CKEditor 5 in React!</p>',
-        }}
-      />
     </div>
   );
 }
