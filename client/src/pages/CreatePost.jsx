@@ -5,7 +5,6 @@ import Button from 'react-bootstrap/Button';
 import { useForm } from 'react-hook-form';
 import Form from 'react-bootstrap/Form';
 import Stack from 'react-bootstrap/Stack';
-import QuillTest from '../components/texteditor/QuillTest';
 
 export default function CreatePost() {
   const queryClient = useQueryClient();
@@ -89,6 +88,7 @@ export default function CreatePost() {
               controlId='exampleForm.ControlTextarea1'
             >
               <Form.Label>Body</Form.Label>
+
               <Form.Control
                 as='textarea'
                 rows={3}

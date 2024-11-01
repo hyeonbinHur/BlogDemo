@@ -7,6 +7,7 @@ import CreatePost from './pages/CreatePost';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import EditorTest from './pages/EditorTest';
+import Auth from './pages/Auth';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path='/feeds/:id' element={<Post />} />
         <Route path='/create-post' element={<CreatePost />} />
         <Route path='/editor-test' element={<EditorTest />} />
+        <Route path='/auth' element={<Auth />} />
         <Route path='/' element={<Home />} />
       </Routes>
     </BrowserRouter>

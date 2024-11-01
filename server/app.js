@@ -25,7 +25,7 @@ app.use("/test/api", router); // 테스트용 api이므로 추후에 삭제
 
 router.get("/tests", apis.testApi);
 //
-router.post("/sign-up", (req, res) => {
+router.post("/user/sign-up", (req, res) => {
   const { id, pw, name } = req.body;
   bcrypt.hash(pw, 10, (err, hash) => {
     if (err) {
@@ -45,7 +45,7 @@ router.post("/sign-up", (req, res) => {
   });
 });
 
-router.post("/sign-in", (req, res) => {
+router.post("/user/sign-in", (req, res) => {
   const { id, pw } = req.body;
   const query = "SELECT * FROM Users WHERE id = ?";
   connection.query(query, [id], (error, results) => {

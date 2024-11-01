@@ -11,6 +11,7 @@ const Feeds = () => {
       setParmsData(response.data);
     });
   }, []);
+
   console.log(parmsData);
 
   return (

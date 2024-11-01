@@ -26,6 +26,10 @@ export default function Header() {
             <Nav.Link as={Link} to='/editor-test'>
               editor test
             </Nav.Link>
+
+            <Nav.Link as={Link} to='/auth'>
+              auth test
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
