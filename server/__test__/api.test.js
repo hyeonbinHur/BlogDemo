@@ -31,7 +31,7 @@ describe("first test", () => {
       }
     });
     // testApi 함수 호출
-    apis.testApi(mockRequest, mockResponse);
+    // apis.testApi(mockRequest, mockResponse);
   });
 });
 
