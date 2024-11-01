@@ -1,24 +1,17 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
+import axios from 'axios';
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
 const Home = () => {
-  const [data, setData] = useState([]);
-  function clickBtn() {
-    axios.get("http://localhost:3000/test/api/tests").then((response) => {
-      console.log(response.data); // 응답 데이터 출력
-    });
-  }
+  const params = useParams();
+  const [parmsData, setParmsData] = useState();
+  useEffect(() => {
+    setParmsData(params);
+  }, [params]);
 
   return (
     <>
-      <div className="main-container">
-        <div className="sub-container">
-          <button className="communicationBtn" onClick={clickBtn}>
-            버튼
-          </button>
-          <div>Hello world</div>
-        </div>
-      </div>
+      <div className='main-container'></div>
     </>
   );
 };

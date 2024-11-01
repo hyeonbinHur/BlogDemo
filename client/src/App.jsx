@@ -1,7 +1,8 @@
 import Header from './components/Header';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Feed from './pages/Feed';
+import Feeds from './pages/Feeds';
 import Home from './pages/Home';
+import Post from './pages/Post';
 import CreatePost from './pages/CreatePost';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -11,7 +12,8 @@ function App() {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path='/feed' element={<Feed />} />
+        <Route path='/feeds' element={<Feeds />} />
+        <Route path='/feeds/:id' element={<Post />} />
         <Route path='/create-post' element={<CreatePost />} />
         <Route path='/' element={<Home />} />
       </Routes>
