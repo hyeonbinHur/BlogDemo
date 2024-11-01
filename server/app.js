@@ -2,7 +2,6 @@ const express = require("express"); // import and assign express framework
 const cors = require("cors");
 const apis = require("./handler/api.js");
 const postRouter = require("./routers/post.js");
-
 const app = express();
 const port = 3000;
 const router = express.Router();

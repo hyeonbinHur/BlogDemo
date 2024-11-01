@@ -18,13 +18,11 @@
 //   ImageResize,
 //   ImageUpload,
 // } from 'ckeditor5';
-
 // import 'ckeditor5/ckeditor5.css';
 // import SyntaxHighlighter from 'react-syntax-highlighter';
 // import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 // import JSXParser from 'react-jsx-parser';
 // import parse from 'react-html-parser';
-
 // const TestComponent = ({ jsxString }) => {
 //   const editorRef = useRef();
 //   const [currentHTML, setCurrentHTML] = useState('');
@@ -36,7 +34,6 @@
 //     setCurrentHTML(content);
 //     // 필요 시 서버에 전송하거나 다른 작업 수행
 //   };
-
 //     return (
 //       <JSXParser
 //         components={{ SyntaxHighlighter }}
