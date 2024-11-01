@@ -17,7 +17,7 @@ const Feeds = () => {
     <div className='feedList'>
       {parmsData &&
         parmsData.map((elem, idx) => {
-          return <Feed key={idx} title={elem.title} />;
+          return <Feed key={idx} title={elem.title} id={elem.post_uuid} />;
         })}
     </div>
   );
