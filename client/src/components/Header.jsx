@@ -15,8 +15,8 @@ export default function Header() {
               Home
             </Nav.Link>
 
-            <Nav.Link as={Link} to='/feed'>
-              Feed
+            <Nav.Link as={Link} to='/feeds'>
+              Feeds
             </Nav.Link>
 
             <Nav.Link as={Link} to='/create-post'>

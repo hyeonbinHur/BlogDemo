@@ -1,6 +1,6 @@
 import Header from './components/Header';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Feed from './pages/Feed';
+import Feeds from './pages/Feeds';
 import Home from './pages/Home';
 import CreatePost from './pages/CreatePost';
 
@@ -11,7 +11,8 @@ function App() {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path='/feed' element={<Feed />} />
+        <Route path='/feeds' element={<Feeds />} />
+        <Route path='/feeds/:id' element={<Feeds />} />
         <Route path='/create-post' element={<CreatePost />} />
         <Route path='/' element={<Home />} />
       </Routes>
