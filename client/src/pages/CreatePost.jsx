@@ -43,7 +43,6 @@ export default function CreatePost() {
    * Testing purpost
    *
    */
-
   const { data: posts, refetch } = useQuery({
     queryKey: ['getPosts'],
     queryFn: () => api.readPosts(),

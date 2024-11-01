@@ -2,7 +2,6 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Post.scss';
-
 const Post = () => {
   const { id } = useParams();
   const [postData, setPostData] = useState([]);
@@ -12,8 +11,8 @@ const Post = () => {
       setPostData(response.data[0]);
     });
   }, [id]);
-  console.log(postData);
 
+  console.log(postData);
   return (
     <div className='postMainContainer'>
       <div className='postTitle'>{postData.title}</div>

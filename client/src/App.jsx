@@ -6,6 +6,7 @@ import Post from './pages/Post';
 import CreatePost from './pages/CreatePost';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import EditorTest from './pages/EditorTest';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path='/feeds' element={<Feeds />} />
         <Route path='/feeds/:id' element={<Post />} />
         <Route path='/create-post' element={<CreatePost />} />
+        <Route path='/editor-test' element={<EditorTest />} />
         <Route path='/' element={<Home />} />
       </Routes>
     </BrowserRouter>
